@@ -1,0 +1,3 @@
+formato,tamano,seg_1a_ejecucion,seg_2a_ejecucion
+csv,6.4 GB,43.8,40.4
+parquet,839.0 MB,2.77,2.53

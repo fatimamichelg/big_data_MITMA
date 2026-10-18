@@ -1,0 +1,38 @@
+FSCK started by root (auth:SIMPLE) from /172.18.0.7 for path /raw/viajes at Sat Oct 17 16:05:55 UTC 2026
+
+Status: HEALTHY
+ Number of data-nodes:	2
+ Number of racks:		1
+ Total dirs:			1
+ Total symlinks:		0
+
+Replicated Blocks:
+ Total size:	6871662808 B
+ Total files:	7
+ Total blocks (validated):	54 (avg. block size 127253014 B)
+ Minimally replicated blocks:	54 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	2
+ Average block replication:	2.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+FSCK ended at Sat Oct 17 16:05:55 UTC 2026 in 22 milliseconds
+
+
+The filesystem under path '/raw/viajes' is HEALTHY

@@ -1,0 +1,48 @@
+FSCK started by root (auth:SIMPLE) from /172.18.0.7 for path /raw/viajes/20221026_Viajes_municipios.csv at Sat Oct 17 16:44:25 UTC 2026
+/raw/viajes/20221026_Viajes_municipios.csv 1014578716 bytes, replicated: replication=2, 8 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073741943_1119 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.2:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+1. BP-1940130292-172.18.0.3-1792136015989:blk_1073741944_1120 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.2:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+2. BP-1940130292-172.18.0.3-1792136015989:blk_1073741945_1121 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.2:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+3. BP-1940130292-172.18.0.3-1792136015989:blk_1073741946_1122 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.2:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+4. BP-1940130292-172.18.0.3-1792136015989:blk_1073741947_1123 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.2:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+5. BP-1940130292-172.18.0.3-1792136015989:blk_1073741948_1124 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.2:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+6. BP-1940130292-172.18.0.3-1792136015989:blk_1073741949_1125 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.2:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+7. BP-1940130292-172.18.0.3-1792136015989:blk_1073741950_1126 len=75054620 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.2:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+
+
+Status: HEALTHY
+ Number of data-nodes:	2
+ Number of racks:		1
+ Total dirs:			0
+ Total symlinks:		0
+
+Replicated Blocks:
+ Total size:	1014578716 B
+ Total files:	1
+ Total blocks (validated):	8 (avg. block size 126822339 B)
+ Minimally replicated blocks:	8 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	2
+ Average block replication:	2.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+FSCK ended at Sat Oct 17 16:44:25 UTC 2026 in 12 milliseconds
+
+
+The filesystem under path '/raw/viajes/20221026_Viajes_municipios.csv' is HEALTHY

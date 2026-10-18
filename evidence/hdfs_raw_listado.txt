@@ -1,0 +1,11 @@
+drwxr-xr-x   - root supergroup          0 2026-10-17 12:55 /raw/viajes
+-rw-r--r--   2 root supergroup 1014578716 2026-10-16 09:19 /raw/viajes/20221026_Viajes_municipios.csv
+-rw-r--r--   2 root supergroup 1026249052 2026-10-16 09:19 /raw/viajes/20221027_Viajes_municipios.csv
+-rw-r--r--   2 root supergroup 1070387508 2026-10-16 09:19 /raw/viajes/20221028_Viajes_municipios.csv
+-rw-r--r--   2 root supergroup  983310195 2026-10-16 09:20 /raw/viajes/20221029_Viajes_municipios.csv
+-rw-r--r--   2 root supergroup  909235352 2026-10-16 09:20 /raw/viajes/20221030_Viajes_municipios.csv
+-rw-r--r--   2 root supergroup  999006050 2026-10-16 09:20 /raw/viajes/20221031_Viajes_municipios.csv
+-rw-r--r--   2 root supergroup  868895935 2026-10-16 09:20 /raw/viajes/20221101_Viajes_municipios.csv
+drwxr-xr-x   - root supergroup          0 2026-10-17 18:17 /raw/zonificacion
+-rw-r--r--   2 root supergroup      91538 2026-10-16 09:20 /raw/zonificacion/nombres_municipios.csv
+-rw-r--r--   2 root supergroup     147217 2026-10-17 18:17 /raw/zonificacion/nombres_municipios_ampliado.csv

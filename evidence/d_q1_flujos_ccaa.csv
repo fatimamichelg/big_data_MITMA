@@ -1,0 +1,338 @@
+ccaa_origen,ccaa_destino,viajes,pct_interccaa
+Comunidad de Madrid,Castilla-La Mancha,2221859,13.34
+Castilla-La Mancha,Comunidad de Madrid,2203501,13.23
+Comunitat Valenciana,Región de Murcia,637561,3.83
+Región de Murcia,Comunitat Valenciana,636698,3.82
+Comunidad de Madrid,Castilla y León,606591,3.64
+Castilla y León,Comunidad de Madrid,586550,3.52
+Cataluña,Aragón,283334,1.7
+Aragón,Cataluña,281225,1.69
+País Vasco,Cantabria,264129,1.59
+Cantabria,País Vasco,263134,1.58
+Comunidad Foral de Navarra,La Rioja,248910,1.49
+La Rioja,Comunidad Foral de Navarra,248659,1.49
+Comunitat Valenciana,Castilla-La Mancha,238235,1.43
+País Vasco,Castilla y León,237572,1.43
+Castilla-La Mancha,Comunitat Valenciana,234311,1.41
+Cataluña,Comunitat Valenciana,233487,1.4
+Castilla y León,País Vasco,231387,1.39
+Comunitat Valenciana,Cataluña,226973,1.36
+Comunidad Foral de Navarra,País Vasco,209452,1.26
+País Vasco,Comunidad Foral de Navarra,208054,1.25
+Comunidad de Madrid,Andalucía,186371,1.12
+Región de Murcia,Andalucía,181148,1.09
+Andalucía,Región de Murcia,180511,1.08
+País Vasco,La Rioja,173481,1.04
+Andalucía,Comunidad de Madrid,173239,1.04
+La Rioja,País Vasco,172873,1.04
+Comunidad de Madrid,Comunitat Valenciana,143335,0.86
+Comunitat Valenciana,Comunidad de Madrid,136510,0.82
+Extremadura,Andalucía,124409,0.75
+Andalucía,Extremadura,122995,0.74
+Comunidad Foral de Navarra,Aragón,116699,0.7
+Aragón,Comunidad Foral de Navarra,116221,0.7
+Aragón,Comunitat Valenciana,114528,0.69
+Principado de Asturias,Galicia,112881,0.68
+Galicia,Principado de Asturias,111933,0.67
+Comunitat Valenciana,Aragón,111177,0.67
+Comunidad de Madrid,Extremadura,102634,0.62
+Castilla-La Mancha,Andalucía,100579,0.6
+Andalucía,Castilla-La Mancha,97527,0.59
+Galicia,Castilla y León,92602,0.56
+Extremadura,Comunidad de Madrid,92587,0.56
+Castilla-La Mancha,Región de Murcia,91646,0.55
+Castilla y León,Galicia,91398,0.55
+Región de Murcia,Castilla-La Mancha,91065,0.55
+Cantabria,Castilla y León,89605,0.54
+Castilla y León,Castilla-La Mancha,89250,0.54
+Castilla-La Mancha,Castilla y León,87052,0.52
+Castilla y León,Cantabria,85069,0.51
+Cataluña,Comunidad de Madrid,82051,0.49
+Principado de Asturias,Castilla y León,81407,0.49
+Comunidad de Madrid,Cataluña,79916,0.48
+Castilla y León,Extremadura,78656,0.47
+Castilla y León,Principado de Asturias,78560,0.47
+Extremadura,Castilla y León,77674,0.47
+Principado de Asturias,Cantabria,72652,0.44
+Cantabria,Principado de Asturias,71403,0.43
+Comunitat Valenciana,Andalucía,70390,0.42
+Andalucía,Comunitat Valenciana,68083,0.41
+Comunidad de Madrid,Galicia,53896,0.32
+Castilla-La Mancha,Extremadura,53481,0.32
+Extremadura,Castilla-La Mancha,51364,0.31
+Aragón,Comunidad de Madrid,50454,0.3
+Galicia,Comunidad de Madrid,50414,0.3
+Comunidad de Madrid,Aragón,49976,0.3
+La Rioja,Castilla y León,49772,0.3
+Castilla y León,La Rioja,48239,0.29
+País Vasco,Comunidad de Madrid,48209,0.29
+Comunidad de Madrid,País Vasco,46051,0.28
+Aragón,Castilla y León,43635,0.26
+Castilla y León,Aragón,41075,0.25
+Cataluña,Andalucía,39269,0.24
+Andalucía,Cataluña,36963,0.22
+Comunidad de Madrid,Principado de Asturias,35135,0.21
+Comunidad de Madrid,Región de Murcia,34685,0.21
+Illes Balears,Cataluña,34503,0.21
+Principado de Asturias,Comunidad de Madrid,34357,0.21
+Región de Murcia,Comunidad de Madrid,34107,0.2
+Cataluña,Illes Balears,31316,0.19
+Comunidad de Madrid,Canarias,29280,0.18
+Cantabria,Comunidad de Madrid,29087,0.17
+Comunidad de Madrid,Cantabria,29014,0.17
+País Vasco,Cataluña,26400,0.16
+Canarias,Comunidad de Madrid,25985,0.16
+Cataluña,País Vasco,25583,0.15
+Ceuta,Andalucía,25182,0.15
+Aragón,País Vasco,24658,0.15
+País Vasco,Aragón,24179,0.15
+Castilla y León,Andalucía,23763,0.14
+Andalucía,Castilla y León,23541,0.14
+Comunidad Foral de Navarra,Castilla y León,23202,0.14
+Castilla y León,Comunidad Foral de Navarra,22804,0.14
+Andalucía,Ceuta,22721,0.14
+La Rioja,Aragón,21144,0.13
+Illes Balears,Comunitat Valenciana,21017,0.13
+Aragón,La Rioja,20671,0.12
+Cataluña,Castilla y León,20623,0.12
+Comunitat Valenciana,Castilla y León,20332,0.12
+Cataluña,Castilla-La Mancha,19243,0.12
+Comunidad Foral de Navarra,Comunidad de Madrid,19200,0.12
+Illes Balears,Comunidad de Madrid,18984,0.11
+Comunidad de Madrid,Comunidad Foral de Navarra,18955,0.11
+Aragón,Castilla-La Mancha,18647,0.11
+Castilla y León,Comunitat Valenciana,18034,0.11
+Castilla y León,Cataluña,17518,0.11
+Comunitat Valenciana,Illes Balears,17474,0.1
+Comunidad Foral de Navarra,Cataluña,16875,0.1
+Comunidad de Madrid,Illes Balears,16777,0.1
+País Vasco,Principado de Asturias,16724,0.1
+Castilla-La Mancha,Cataluña,16327,0.1
+Cataluña,Comunidad Foral de Navarra,16314,0.1
+Castilla-La Mancha,Aragón,16130,0.1
+Principado de Asturias,País Vasco,15497,0.09
+Illes Balears,Andalucía,13146,0.08
+Canarias,Andalucía,13052,0.08
+Andalucía,Canarias,13043,0.08
+La Rioja,Comunidad de Madrid,12671,0.08
+Comunidad de Madrid,La Rioja,12656,0.08
+Región de Murcia,Cataluña,12521,0.08
+Cataluña,Región de Murcia,12200,0.07
+País Vasco,Comunitat Valenciana,12120,0.07
+Comunitat Valenciana,País Vasco,12008,0.07
+Cataluña,Canarias,11692,0.07
+País Vasco,Galicia,11115,0.07
+Canarias,Cataluña,10318,0.06
+Andalucía,Illes Balears,9918,0.06
+Galicia,País Vasco,9858,0.06
+País Vasco,Andalucía,9638,0.06
+Galicia,Cataluña,9596,0.06
+Cataluña,Galicia,9587,0.06
+Andalucía,País Vasco,8931,0.05
+Cataluña,La Rioja,8859,0.05
+Aragón,Andalucía,8540,0.05
+Galicia,Andalucía,8391,0.05
+La Rioja,Cataluña,7976,0.05
+Comunitat Valenciana,Comunidad Foral de Navarra,7876,0.05
+Galicia,Canarias,7683,0.05
+Canarias,Galicia,7561,0.05
+Andalucía,Aragón,7487,0.04
+Comunidad Foral de Navarra,Comunitat Valenciana,7293,0.04
+Andalucía,Galicia,6945,0.04
+Melilla,Andalucía,6402,0.04
+Galicia,Comunitat Valenciana,5848,0.04
+País Vasco,Castilla-La Mancha,5818,0.03
+Comunitat Valenciana,Galicia,5585,0.03
+Andalucía,Melilla,5455,0.03
+Cantabria,La Rioja,5293,0.03
+Galicia,Castilla-La Mancha,5286,0.03
+Comunidad Foral de Navarra,Cantabria,5242,0.03
+Comunitat Valenciana,Canarias,5167,0.03
+La Rioja,Cantabria,5166,0.03
+Cantabria,Galicia,5070,0.03
+País Vasco,Extremadura,5066,0.03
+Canarias,Comunitat Valenciana,5060,0.03
+Cantabria,Comunidad Foral de Navarra,4901,0.03
+Castilla-La Mancha,Galicia,4897,0.03
+Cantabria,Cataluña,4892,0.03
+Castilla-La Mancha,País Vasco,4892,0.03
+Galicia,Cantabria,4827,0.03
+Castilla y León,Región de Murcia,4328,0.03
+Comunitat Valenciana,Extremadura,4303,0.03
+Cataluña,Cantabria,4218,0.03
+Región de Murcia,Castilla y León,4214,0.03
+Cantabria,Aragón,4200,0.03
+Extremadura,País Vasco,4160,0.02
+Comunitat Valenciana,La Rioja,3998,0.02
+Cataluña,Principado de Asturias,3980,0.02
+Principado de Asturias,Andalucía,3959,0.02
+Extremadura,Comunitat Valenciana,3950,0.02
+Canarias,País Vasco,3851,0.02
+País Vasco,Canarias,3784,0.02
+Andalucía,Principado de Asturias,3605,0.02
+Aragón,Región de Murcia,3604,0.02
+La Rioja,Comunitat Valenciana,3602,0.02
+Comunitat Valenciana,Principado de Asturias,3513,0.02
+Principado de Asturias,Castilla-La Mancha,3503,0.02
+Aragón,Cantabria,3435,0.02
+Comunidad Foral de Navarra,Castilla-La Mancha,3434,0.02
+Principado de Asturias,Cataluña,3373,0.02
+Galicia,Extremadura,3351,0.02
+Principado de Asturias,Comunitat Valenciana,3343,0.02
+Cataluña,Extremadura,3332,0.02
+Región de Murcia,Aragón,3328,0.02
+Castilla-La Mancha,Principado de Asturias,3194,0.02
+Castilla-La Mancha,Comunidad Foral de Navarra,3012,0.02
+Extremadura,Galicia,3009,0.02
+Cantabria,Andalucía,2933,0.02
+Cantabria,Castilla-La Mancha,2891,0.02
+País Vasco,Illes Balears,2868,0.02
+Canarias,Castilla y León,2812,0.02
+Illes Balears,País Vasco,2707,0.02
+Extremadura,Cataluña,2700,0.02
+Comunitat Valenciana,Cantabria,2690,0.02
+Cantabria,Comunitat Valenciana,2681,0.02
+Castilla-La Mancha,Cantabria,2665,0.02
+Illes Balears,Galicia,2660,0.02
+Andalucía,Comunidad Foral de Navarra,2577,0.02
+Canarias,Principado de Asturias,2411,0.01
+Castilla y León,Canarias,2382,0.01
+La Rioja,Castilla-La Mancha,2378,0.01
+Andalucía,Cantabria,2348,0.01
+Comunidad Foral de Navarra,Andalucía,2281,0.01
+Illes Balears,Castilla-La Mancha,2246,0.01
+Principado de Asturias,Canarias,2232,0.01
+Illes Balears,Castilla y León,2145,0.01
+Galicia,Región de Murcia,2094,0.01
+Canarias,Castilla-La Mancha,2059,0.01
+Galicia,Illes Balears,1981,0.01
+Galicia,Aragón,1950,0.01
+Aragón,Galicia,1929,0.01
+Principado de Asturias,Comunidad Foral de Navarra,1829,0.01
+Castilla-La Mancha,La Rioja,1819,0.01
+Región de Murcia,Galicia,1816,0.01
+Illes Balears,Canarias,1790,0.01
+Principado de Asturias,Extremadura,1753,0.01
+Principado de Asturias,Aragón,1720,0.01
+Extremadura,Principado de Asturias,1679,0.01
+Castilla y León,Illes Balears,1673,0.01
+Illes Balears,Región de Murcia,1672,0.01
+Región de Murcia,Comunidad Foral de Navarra,1671,0.01
+Cantabria,Canarias,1670,0.01
+Castilla-La Mancha,Canarias,1664,0.01
+Principado de Asturias,La Rioja,1649,0.01
+Canarias,Illes Balears,1623,0.01
+Aragón,Extremadura,1610,0.01
+Aragón,Principado de Asturias,1568,0.01
+Comunidad Foral de Navarra,Principado de Asturias,1555,0.01
+La Rioja,Principado de Asturias,1450,0.01
+Extremadura,Región de Murcia,1430,0.01
+Illes Balears,Aragón,1430,0.01
+Canarias,Región de Murcia,1426,0.01
+Comunidad Foral de Navarra,Galicia,1382,0.01
+Región de Murcia,Illes Balears,1373,0.01
+Región de Murcia,Extremadura,1348,0.01
+Cantabria,Extremadura,1327,0.01
+Galicia,Comunidad Foral de Navarra,1327,0.01
+Región de Murcia,Canarias,1312,0.01
+Andalucía,La Rioja,1308,0.01
+La Rioja,Andalucía,1288,0.01
+Aragón,Illes Balears,1277,0.01
+La Rioja,Galicia,1206,0.01
+Canarias,Aragón,1196,0.01
+Extremadura,Aragón,1164,0.01
+Aragón,Canarias,1132,0.01
+Extremadura,Cantabria,1120,0.01
+País Vasco,Región de Murcia,1116,0.01
+Castilla-La Mancha,Illes Balears,1113,0.01
+Región de Murcia,País Vasco,1107,0.01
+Galicia,La Rioja,1094,0.01
+Canarias,Extremadura,1031,0.01
+Canarias,Cantabria,1024,0.01
+Illes Balears,Principado de Asturias,995,0.01
+Principado de Asturias,Illes Balears,894,0.01
+Comunidad Foral de Navarra,Región de Murcia,869,0.01
+Comunidad Foral de Navarra,Extremadura,865,0.01
+Extremadura,Canarias,855,0.01
+Illes Balears,Extremadura,811,0.0
+Comunidad de Madrid,Melilla,677,0.0
+Melilla,Comunidad de Madrid,647,0.0
+Región de Murcia,Principado de Asturias,642,0.0
+Illes Balears,Cantabria,640,0.0
+Canarias,Comunidad Foral de Navarra,632,0.0
+Extremadura,Comunidad Foral de Navarra,631,0.0
+Región de Murcia,La Rioja,623,0.0
+La Rioja,Extremadura,596,0.0
+Principado de Asturias,Región de Murcia,577,0.0
+Extremadura,La Rioja,518,0.0
+Cantabria,Illes Balears,486,0.0
+Extremadura,Illes Balears,471,0.0
+Cantabria,Región de Murcia,446,0.0
+Comunidad Foral de Navarra,Canarias,429,0.0
+Región de Murcia,Cantabria,412,0.0
+Illes Balears,Comunidad Foral de Navarra,368,0.0
+Illes Balears,La Rioja,326,0.0
+Comunidad de Madrid,Ceuta,287,0.0
+La Rioja,Región de Murcia,261,0.0
+Comunidad Foral de Navarra,Illes Balears,255,0.0
+Ceuta,Comunidad de Madrid,246,0.0
+Ceuta,Extremadura,193,0.0
+Canarias,La Rioja,173,0.0
+Melilla,Cataluña,167,0.0
+La Rioja,Illes Balears,147,0.0
+Melilla,Comunitat Valenciana,137,0.0
+Cataluña,Melilla,128,0.0
+La Rioja,Canarias,113,0.0
+Ceuta,Región de Murcia,111,0.0
+Ceuta,Comunitat Valenciana,107,0.0
+Melilla,Región de Murcia,101,0.0
+Canarias,Melilla,96,0.0
+Ceuta,Cataluña,88,0.0
+Comunitat Valenciana,Ceuta,71,0.0
+Cataluña,Ceuta,68,0.0
+Canarias,Ceuta,65,0.0
+Ceuta,Castilla y León,55,0.0
+Región de Murcia,Ceuta,53,0.0
+Castilla y León,Ceuta,53,0.0
+Melilla,Castilla y León,52,0.0
+Melilla,Canarias,46,0.0
+Ceuta,Melilla,43,0.0
+Melilla,Galicia,43,0.0
+Melilla,Castilla-La Mancha,43,0.0
+Melilla,País Vasco,42,0.0
+Galicia,Melilla,41,0.0
+Melilla,Ceuta,40,0.0
+Melilla,Aragón,39,0.0
+Ceuta,Aragón,31,0.0
+Ceuta,Castilla-La Mancha,30,0.0
+Principado de Asturias,Ceuta,29,0.0
+Melilla,Extremadura,28,0.0
+Melilla,Illes Balears,27,0.0
+Comunitat Valenciana,Melilla,27,0.0
+Castilla y León,Melilla,26,0.0
+Ceuta,Canarias,26,0.0
+Extremadura,Melilla,24,0.0
+Ceuta,Galicia,23,0.0
+Aragón,Ceuta,22,0.0
+Castilla-La Mancha,Ceuta,21,0.0
+Galicia,Ceuta,19,0.0
+Región de Murcia,Melilla,18,0.0
+Extremadura,Ceuta,16,0.0
+Ceuta,Cantabria,16,0.0
+Melilla,La Rioja,15,0.0
+Aragón,Melilla,15,0.0
+Illes Balears,Melilla,14,0.0
+Castilla-La Mancha,Melilla,11,0.0
+Melilla,Cantabria,10,0.0
+Ceuta,Illes Balears,10,0.0
+La Rioja,Melilla,10,0.0
+País Vasco,Melilla,10,0.0
+País Vasco,Ceuta,10,0.0
+Illes Balears,Ceuta,9,0.0
+Comunidad Foral de Navarra,Ceuta,7,0.0
+Ceuta,Comunidad Foral de Navarra,7,0.0
+Melilla,Principado de Asturias,6,0.0
+Principado de Asturias,Melilla,6,0.0
+Melilla,Comunidad Foral de Navarra,3,0.0
+Ceuta,País Vasco,2,0.0
+Comunidad Foral de Navarra,Melilla,2,0.0

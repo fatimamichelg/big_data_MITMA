@@ -1,0 +1,218 @@
+== Physical Plan ==
+AdaptiveSparkPlan (40)
++- == Final Plan ==
+   ResultQueryStage (24), Statistics(sizeInBytes=8.0 EiB)
+   +- * Sort (23)
+      +- AQEShuffleRead (22), coalesced
+         +- ShuffleQueryStage (21), Statistics(sizeInBytes=1448.0 B, rowCount=21)
+            +- Exchange (20)
+               +- * Filter (19)
+                  +- Window (18)
+                     +- WindowGroupLimit (17)
+                        +- * Sort (16)
+                           +- AQEShuffleRead (15), coalesced
+                              +- ShuffleQueryStage (14), Statistics(sizeInBytes=4.9 KiB, rowCount=84)
+                                 +- Exchange (13)
+                                    +- WindowGroupLimit (12)
+                                       +- * Sort (11)
+                                          +- * HashAggregate (10)
+                                             +- AQEShuffleRead (9), coalesced
+                                                +- ShuffleQueryStage (8), Statistics(sizeInBytes=6.7 MiB, rowCount=9.74E+4)
+                                                   +- Exchange (7)
+                                                      +- * HashAggregate (6)
+                                                         +- * Project (5)
+                                                            +- * Filter (4)
+                                                               +- * Project (3)
+                                                                  +- * ColumnarToRow (2)
+                                                                     +- Scan parquet  (1)
++- == Initial Plan ==
+   Sort (39)
+   +- Exchange (38)
+      +- Filter (37)
+         +- Window (36)
+            +- WindowGroupLimit (35)
+               +- Sort (34)
+                  +- Exchange (33)
+                     +- WindowGroupLimit (32)
+                        +- Sort (31)
+                           +- HashAggregate (30)
+                              +- Exchange (29)
+                                 +- HashAggregate (28)
+                                    +- Project (27)
+                                       +- Filter (26)
+                                          +- Project (25)
+                                             +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [4]: [destino#636, viajes#648, nombre_destino#653, fecha#658]
+Batched: true
+Location: InMemoryFileIndex [hdfs://namenode:9000/curated/viajes]
+ReadSchema: struct<destino:string,viajes:double,nombre_destino:string>
+
+(2) ColumnarToRow [codegen id : 1]
+Input [4]: [destino#636, viajes#648, nombre_destino#653, fecha#658]
+
+(3) Project [codegen id : 1]
+Output [5]: [destino#636, viajes#648, nombre_destino#653, fecha#658, (RLIKE(destino#636, ^(PT|FR)) OR (destino#636 = externo)) AS destino_extranjero#661]
+Input [4]: [destino#636, viajes#648, nombre_destino#653, fecha#658]
+
+(4) Filter [codegen id : 1]
+Input [5]: [destino#636, viajes#648, nombre_destino#653, fecha#658, destino_extranjero#661]
+Condition : (isnotnull(destino_extranjero#661) AND NOT destino_extranjero#661)
+
+(5) Project [codegen id : 1]
+Output [4]: [destino#636, viajes#648, coalesce(nombre_destino#653, ZONA EXTRANJERA) AS nombre_destino#663, fecha#658]
+Input [5]: [destino#636, viajes#648, nombre_destino#653, fecha#658, destino_extranjero#661]
+
+(6) HashAggregate [codegen id : 1]
+Input [4]: [destino#636, viajes#648, nombre_destino#663, fecha#658]
+Keys [3]: [fecha#658, destino#636, nombre_destino#663]
+Functions [1]: [partial_sum(viajes#648)]
+Aggregate Attributes [1]: [sum#1457]
+Results [4]: [fecha#658, destino#636, nombre_destino#663, sum#1458]
+
+(7) Exchange
+Input [4]: [fecha#658, destino#636, nombre_destino#663, sum#1458]
+Arguments: hashpartitioning(fecha#658, destino#636, nombre_destino#663, 64), ENSURE_REQUIREMENTS, [plan_id=4857]
+
+(8) ShuffleQueryStage
+Output [4]: [fecha#658, destino#636, nombre_destino#663, sum#1458]
+Arguments: 0
+
+(9) AQEShuffleRead
+Input [4]: [fecha#658, destino#636, nombre_destino#663, sum#1458]
+Arguments: coalesced
+
+(10) HashAggregate [codegen id : 2]
+Input [4]: [fecha#658, destino#636, nombre_destino#663, sum#1458]
+Keys [3]: [fecha#658, destino#636, nombre_destino#663]
+Functions [1]: [sum(viajes#648)]
+Aggregate Attributes [1]: [sum(viajes#648)#1442]
+Results [4]: [fecha#658, destino#636, nombre_destino#663, sum(viajes#648)#1442 AS viajes#1416]
+
+(11) Sort [codegen id : 2]
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [fecha#658 ASC NULLS FIRST, viajes#1416 DESC NULLS LAST], false, 0
+
+(12) WindowGroupLimit
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [fecha#658], [viajes#1416 DESC NULLS LAST], rank(viajes#1416), 3, Partial
+
+(13) Exchange
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: hashpartitioning(fecha#658, 64), ENSURE_REQUIREMENTS, [plan_id=4936]
+
+(14) ShuffleQueryStage
+Output [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: 1
+
+(15) AQEShuffleRead
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: coalesced
+
+(16) Sort [codegen id : 3]
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [fecha#658 ASC NULLS FIRST, viajes#1416 DESC NULLS LAST], false, 0
+
+(17) WindowGroupLimit
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [fecha#658], [viajes#1416 DESC NULLS LAST], rank(viajes#1416), 3, Final
+
+(18) Window
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [rank(viajes#1416) windowspecdefinition(fecha#658, viajes#1416 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS puesto#2411], [fecha#658], [viajes#1416 DESC NULLS LAST]
+
+(19) Filter [codegen id : 4]
+Input [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Condition : (puesto#2411 <= 3)
+
+(20) Exchange
+Input [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Arguments: rangepartitioning(fecha#658 ASC NULLS FIRST, puesto#2411 ASC NULLS FIRST, 64), ENSURE_REQUIREMENTS, [plan_id=4991]
+
+(21) ShuffleQueryStage
+Output [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Arguments: 2
+
+(22) AQEShuffleRead
+Input [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Arguments: coalesced
+
+(23) Sort [codegen id : 5]
+Input [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Arguments: [fecha#658 ASC NULLS FIRST, puesto#2411 ASC NULLS FIRST], true, 0
+
+(24) ResultQueryStage
+Output [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Arguments: 3
+
+(25) Project
+Output [5]: [destino#636, viajes#648, nombre_destino#653, fecha#658, (RLIKE(destino#636, ^(PT|FR)) OR (destino#636 = externo)) AS destino_extranjero#661]
+Input [4]: [destino#636, viajes#648, nombre_destino#653, fecha#658]
+
+(26) Filter
+Input [5]: [destino#636, viajes#648, nombre_destino#653, fecha#658, destino_extranjero#661]
+Condition : (isnotnull(destino_extranjero#661) AND NOT destino_extranjero#661)
+
+(27) Project
+Output [4]: [destino#636, viajes#648, coalesce(nombre_destino#653, ZONA EXTRANJERA) AS nombre_destino#663, fecha#658]
+Input [5]: [destino#636, viajes#648, nombre_destino#653, fecha#658, destino_extranjero#661]
+
+(28) HashAggregate
+Input [4]: [destino#636, viajes#648, nombre_destino#663, fecha#658]
+Keys [3]: [fecha#658, destino#636, nombre_destino#663]
+Functions [1]: [partial_sum(viajes#648)]
+Aggregate Attributes [1]: [sum#1457]
+Results [4]: [fecha#658, destino#636, nombre_destino#663, sum#1458]
+
+(29) Exchange
+Input [4]: [fecha#658, destino#636, nombre_destino#663, sum#1458]
+Arguments: hashpartitioning(fecha#658, destino#636, nombre_destino#663, 64), ENSURE_REQUIREMENTS, [plan_id=4801]
+
+(30) HashAggregate
+Input [4]: [fecha#658, destino#636, nombre_destino#663, sum#1458]
+Keys [3]: [fecha#658, destino#636, nombre_destino#663]
+Functions [1]: [sum(viajes#648)]
+Aggregate Attributes [1]: [sum(viajes#648)#1442]
+Results [4]: [fecha#658, destino#636, nombre_destino#663, sum(viajes#648)#1442 AS viajes#1416]
+
+(31) Sort
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [fecha#658 ASC NULLS FIRST, viajes#1416 DESC NULLS LAST], false, 0
+
+(32) WindowGroupLimit
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [fecha#658], [viajes#1416 DESC NULLS LAST], rank(viajes#1416), 3, Partial
+
+(33) Exchange
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: hashpartitioning(fecha#658, 64), ENSURE_REQUIREMENTS, [plan_id=4807]
+
+(34) Sort
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [fecha#658 ASC NULLS FIRST, viajes#1416 DESC NULLS LAST], false, 0
+
+(35) WindowGroupLimit
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [fecha#658], [viajes#1416 DESC NULLS LAST], rank(viajes#1416), 3, Final
+
+(36) Window
+Input [4]: [fecha#658, destino#636, nombre_destino#663, viajes#1416]
+Arguments: [rank(viajes#1416) windowspecdefinition(fecha#658, viajes#1416 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS puesto#2411], [fecha#658], [viajes#1416 DESC NULLS LAST]
+
+(37) Filter
+Input [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Condition : (puesto#2411 <= 3)
+
+(38) Exchange
+Input [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Arguments: rangepartitioning(fecha#658 ASC NULLS FIRST, puesto#2411 ASC NULLS FIRST, 64), ENSURE_REQUIREMENTS, [plan_id=4813]
+
+(39) Sort
+Input [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Arguments: [fecha#658 ASC NULLS FIRST, puesto#2411 ASC NULLS FIRST], true, 0
+
+(40) AdaptiveSparkPlan
+Output [5]: [fecha#658, destino#636, nombre_destino#663, viajes#1416, puesto#2411]
+Arguments: isFinalPlan=true

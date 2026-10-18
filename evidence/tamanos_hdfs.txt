@@ -1,0 +1,2 @@
+6.4 G  12.8 G  /raw/viajes
+839.0 M  1.6 G  /curated/viajes

@@ -1,0 +1,40 @@
+Last login: Sat Oct 17 19:31:22 on ttys002
+(base) famichel@Fas-MacBook-Air ~ % cd /Users/famichel/Desktop/mitma-project
+(base) famichel@Fas-MacBook-Air mitma-project % docker exec namenode yarn application -list
+2026-10-17 17:33:14,338 INFO client.RMProxy: Connecting to ResourceManager at resourcemanager/172.18.0.5:8032
+2026-10-17 17:33:14,587 INFO client.AHSProxy: Connecting to Application History server at historyserver/172.18.0.6:10200
+Total number of applications (application-types: [], states: [SUBMITTED, ACCEPTED, RUNNING] and tags: []):1
+                Application-Id	    Application-Name	    Application-Type	      User	     Queue	             State	       Final-State	       Progress	                       Tracking-URL
+application_1792252570446_0003	streamjob7763212995529268172.jar	           MAPREDUCE	      root	   default	           RUNNING	         UNDEFINED	         46.67%	          http://7e0897298049:36657
+(base) famichel@Fas-MacBook-Air mitma-project % docker stats --no-stream
+CONTAINER ID   NAME              CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+af04530ac6a4   mitma-spark       0.38%     1.205GiB / 11.67GiB   10.33%    14.8GB / 20.5MB   573MB / 7.22MB    131
+7e0897298049   nodemanager       1.16%     2.072GiB / 11.67GiB   17.76%    14.8GB / 39.9MB   13.2MB / 27.9MB   278
+b048e5bd5154   namenode          1.58%     1.093GiB / 11.67GiB   9.37%     1.03GB / 7.9MB    210MB / 10.9MB    90
+1c29340873cb   resourcemanager   1.10%     859.8MiB / 11.67GiB   7.20%     5.13MB / 1.73MB   680kB / 3.71MB    243
+e080e73ea294   datanode2         0.72%     527.6MiB / 11.67GiB   4.42%     33.8MB / 17.3GB   16.1GB / 58.7MB   85
+c6cda9ca072e   historyserver     0.56%     631MiB / 11.67GiB     5.28%     685kB / 2.03MB    508kB / 5.96MB    55
+59b805fd24d7   datanode1         2.30%     668.7MiB / 11.67GiB   5.60%     27.2MB / 13.3GB   13.1GB / 99.3MB   86
+(base) famichel@Fas-MacBook-Air mitma-project % docker exec namenode yarn application -list
+docker exec namenode yarn node -list
+2026-10-17 17:40:36,976 INFO client.RMProxy: Connecting to ResourceManager at resourcemanager/172.18.0.5:8032
+2026-10-17 17:40:37,228 INFO client.AHSProxy: Connecting to Application History server at historyserver/172.18.0.6:10200
+Total number of applications (application-types: [], states: [SUBMITTED, ACCEPTED, RUNNING] and tags: []):1
+                Application-Id	    Application-Name	    Application-Type	      User	     Queue	             State	       Final-State	       Progress	                       Tracking-URL
+application_1792252570446_0003	streamjob7763212995529268172.jar	           MAPREDUCE	      root	   default	          ACCEPTED	         UNDEFINED	             0%	                                N/A
+2026-10-17 17:40:39,824 INFO client.RMProxy: Connecting to ResourceManager at resourcemanager/172.18.0.5:8032
+2026-10-17 17:40:40,062 INFO client.AHSProxy: Connecting to Application History server at historyserver/172.18.0.6:10200
+Total Nodes:0
+         Node-Id	     Node-State	Node-Http-Address	Number-of-Running-Containers
+(base) famichel@Fas-MacBook-Air mitma-project % docker restart nodemanager
+nodemanager
+(base) famichel@Fas-MacBook-Air mitma-project % docker exec namenode yarn node -list
+2026-10-17 17:42:24,141 INFO client.RMProxy: Connecting to ResourceManager at resourcemanager/172.18.0.5:8032
+2026-10-17 17:42:24,536 INFO client.AHSProxy: Connecting to Application History server at historyserver/172.18.0.6:10200
+Total Nodes:1
+         Node-Id	     Node-State	Node-Http-Address	Number-of-Running-Containers
+7e0897298049:42087	        RUNNING	7e0897298049:8042	                           4
+(base) famichel@Fas-MacBook-Air mitma-project %  $pbpaste > evidence/reto_f_nodemanager_caido.txt
+(base) famichel@Fas-MacBook-Air mitma-project % pbpaste > evidence/reto_f_nodemanager_caido.txt
+(base) famichel@Fas-MacBook-Air mitma-project % pbpaste > evidence/reto_f_nodemanager_caido.txt
+(base) famichel@Fas-MacBook-Air mitma-project % 

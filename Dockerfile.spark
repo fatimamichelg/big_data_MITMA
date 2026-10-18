@@ -1,0 +1,3 @@
+
+FROM quay.io/jupyter/pyspark-notebook
+RUN pip install --no-cache-dir pyyaml

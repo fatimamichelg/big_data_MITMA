@@ -1,0 +1,7 @@
+data/
+evidence/archivo_20dias/
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+.env
+*.bak

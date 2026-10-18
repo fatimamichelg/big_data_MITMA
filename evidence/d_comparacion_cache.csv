@@ -1,0 +1,8 @@
+escenario,segundos
+P2 sin cache,8.27
+P3 sin cache,8.58
+TOTAL sin cache,16.85
+"Crear cache (count, una vez)",7.22
+P2 con cache,0.276
+P3 con cache,1.04
+TOTAL con cache (count + P2 + P3),8.54
