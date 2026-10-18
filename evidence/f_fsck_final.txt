@@ -1,0 +1,208 @@
+FSCK started by root (auth:SIMPLE) from /172.18.0.3 for path /curated/viajes at Sun Oct 18 13:27:17 UTC 2026
+/curated/viajes <dir>
+/curated/viajes/fecha=2022-10-26 <dir>
+/curated/viajes/fecha=2022-10-26/part-00000-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17792543 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742790_1966 len=17792543 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-26/part-00001-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17112533 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742791_1967 len=17112533 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-26/part-00002-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16862440 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742783_1959 len=16862440 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-26/part-00003-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16758649 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742785_1961 len=16758649 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-26/part-00004-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16852292 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742784_1960 len=16852292 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-26/part-00005-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16839384 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742787_1963 len=16839384 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-26/part-00006-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16947830 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742786_1962 len=16947830 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-26/part-00050-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 8933128 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742832_2008 len=8933128 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-27 <dir>
+/curated/viajes/fecha=2022-10-27/part-00007-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17920460 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742782_1958 len=17920460 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-27/part-00008-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17137159 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742789_1965 len=17137159 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-27/part-00009-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16875879 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742788_1964 len=16875879 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-27/part-00010-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16765248 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742793_1969 len=16765248 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-27/part-00011-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16891799 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742792_1968 len=16891799 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-27/part-00012-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16893567 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742801_1977 len=16893567 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-27/part-00013-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16862493 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742798_1974 len=16862493 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-27/part-00049-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 10742370 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742822_1998 len=10742370 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-28 <dir>
+/curated/viajes/fecha=2022-10-28/part-00014-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17800132 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742800_1976 len=17800132 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-28/part-00015-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17159626 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742797_1973 len=17159626 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-28/part-00016-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16953349 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742796_1972 len=16953349 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-28/part-00017-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16910700 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742795_1971 len=16910700 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-28/part-00018-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16910083 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742794_1970 len=16910083 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-28/part-00019-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17166244 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742799_1975 len=17166244 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-28/part-00020-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16974026 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742810_1986 len=16974026 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-28/part-00047-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16447659 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742830_2006 len=16447659 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-29 <dir>
+/curated/viajes/fecha=2022-10-29/part-00021-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17702637 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742804_1980 len=17702637 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-29/part-00022-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17776465 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742808_1984 len=17776465 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-29/part-00023-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17181561 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742805_1981 len=17181561 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-29/part-00024-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16963915 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742809_1985 len=16963915 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-29/part-00025-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17066170 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742807_1983 len=17066170 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-29/part-00026-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16866977 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742803_1979 len=16866977 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-29/part-00027-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16836875 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742802_1978 len=16836875 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-29/part-00052-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 5270728 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742833_2009 len=5270728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-30 <dir>
+/curated/viajes/fecha=2022-10-30/part-00028-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 21582859 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742806_1982 len=21582859 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-30/part-00029-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17606470 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742811_1987 len=17606470 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-30/part-00030-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17116755 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742812_1988 len=17116755 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-30/part-00031-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17053494 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742816_1992 len=17053494 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-30/part-00032-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17276047 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742814_1990 len=17276047 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-30/part-00033-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17136216 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742813_1989 len=17136216 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-30/part-00048-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 13124371 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742823_1999 len=13124371 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-31 <dir>
+/curated/viajes/fecha=2022-10-31/part-00034-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17645949 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742821_1997 len=17645949 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-31/part-00035-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17270227 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742815_1991 len=17270227 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-31/part-00036-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17050745 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742818_1994 len=17050745 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-31/part-00037-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16836574 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742819_1995 len=16836574 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-31/part-00038-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17015374 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742820_1996 len=17015374 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-31/part-00039-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16973752 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742817_1993 len=16973752 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-31/part-00040-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 16799198 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742828_2004 len=16799198 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-10-31/part-00051-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 7068886 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742834_2010 len=7068886 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-11-01 <dir>
+/curated/viajes/fecha=2022-11-01/part-00041-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17417520 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742826_2002 len=17417520 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-11-01/part-00042-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17732036 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742829_2005 len=17732036 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-11-01/part-00043-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17373296 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742825_2001 len=17373296 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-11-01/part-00044-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17211927 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742824_2000 len=17211927 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-11-01/part-00045-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17374329 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742831_2007 len=17374329 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-11-01/part-00046-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 17263914 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742827_2003 len=17263914 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+/curated/viajes/fecha=2022-11-01/part-00051-b4bccc76-711c-47b1-af14-04ca3a108761.c000.snappy.parquet 7667245 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073742835_2011 len=7667245 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.9:9866,DS-9c044526-92f4-4278-a210-0c83f8188019,DISK]]
+
+
+Status: HEALTHY
+ Number of data-nodes:	2
+ Number of racks:		1
+ Total dirs:			8
+ Total symlinks:		0
+
+Replicated Blocks:
+ Total size:	879772105 B
+ Total files:	54
+ Total blocks (validated):	54 (avg. block size 16292076 B)
+ Minimally replicated blocks:	54 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	2
+ Average block replication:	2.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+FSCK ended at Sun Oct 18 13:27:17 UTC 2026 in 32 milliseconds
+
+
+The filesystem under path '/curated/viajes' is HEALTHY

@@ -1,0 +1,62 @@
+Configured Capacity: 970843111424 (904.17 GB)
+Present Capacity: 872270925824 (812.37 GB)
+DFS Remaining: 856625528832 (797.79 GB)
+DFS Used: 15645396992 (14.57 GB)
+DFS Used%: 1.79%
+Replicated Blocks:
+	Under replicated blocks: 26
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (2):
+
+Name: 172.18.0.2:9866 (datanode2.mitma-project_default)
+Hostname: 32c68b381e76
+Decommission Status : Normal
+Configured Capacity: 485421555712 (452.08 GB)
+DFS Used: 7822696448 (7.29 GB)
+Non DFS Used: 24552742912 (22.87 GB)
+DFS Remaining: 428312780800 (398.90 GB)
+DFS Used%: 1.61%
+DFS Remaining%: 88.24%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Sun Oct 18 11:26:39 UTC 2026
+Last Block Report: Sun Oct 18 09:17:16 UTC 2026
+Num of Blocks: 170
+
+
+Name: 172.18.0.5:9866 (datanode1.mitma-project_default)
+Hostname: bd02cf5385fa
+Decommission Status : Normal
+Configured Capacity: 485421555712 (452.08 GB)
+DFS Used: 7822700544 (7.29 GB)
+Non DFS Used: 24552771584 (22.87 GB)
+DFS Remaining: 428312748032 (398.90 GB)
+DFS Used%: 1.61%
+DFS Remaining%: 88.24%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Sun Oct 18 11:26:40 UTC 2026
+Last Block Report: Sun Oct 18 10:38:42 UTC 2026
+Num of Blocks: 170
+
+

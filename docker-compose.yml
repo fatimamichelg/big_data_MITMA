@@ -14,7 +14,7 @@ services:
     environment:
       - CLUSTER_NAME=test
       - HDFS_CONF_dfs_replication=2
-      - HDFS_CONF_dfs_namenode_heartbeat_recheck-interval=2000
+      - HDFS_CONF_dfs_namenode_heartbeat_recheck___interval=2000
       - HDFS_CONF_dfs_heartbeat_interval=1
     env_file:
       - ./hadoop.env
@@ -39,6 +39,22 @@ services:
     restart: always
     volumes:
       - hadoop_datanode2:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+      HDFS_CONF_dfs_replication: 2
+    env_file:
+      - ./hadoop.env
+
+  # --- Reto F: tercer DataNode, solo arranca con el perfil "reto" ---
+  #     docker compose --profile reto up -d datanode3
+  datanode3:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    platform: linux/amd64
+    container_name: datanode3
+    restart: "no"
+    profiles: ["reto"]
+    volumes:
+      - hadoop_datanode3:/hadoop/dfs/data
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
       HDFS_CONF_dfs_replication: 2
@@ -103,4 +119,5 @@ volumes:
   hadoop_namenode:
   hadoop_datanode1:
   hadoop_datanode2:
+  hadoop_datanode3:
   hadoop_historyserver:
