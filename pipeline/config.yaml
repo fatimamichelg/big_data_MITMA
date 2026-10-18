@@ -1,0 +1,75 @@
+# =====================================================================
+# Configuración del pipeline MITMA
+# Todo lo que cambia de un entorno a otro (rutas, fechas, umbrales...)
+# vive aquí. El código (run_pipeline.py) no tiene rutas escritas.
+# Las rutas locales relativas se resuelven desde la raíz del proyecto.
+# =====================================================================
+
+hdfs:
+  uri: "hdfs://namenode:9000"
+  replicacion: 2
+  zonas:                      # las tres zonas del data lake
+    raw: "/raw"
+    curated: "/curated"
+    results: "/results"
+  subcarpeta_viajes: "viajes"
+  subcarpeta_zonificacion: "zonificacion"
+
+datos:
+  dir_local: "data/raw"                                 # CSV diarios (no se sube a GitHub)
+  patron_fichero: "{fecha}_Viajes_municipios.csv"     # {fecha} = AAAAMMDD
+  tabla_aux_local: "aux_tables/nombres_municipios_ampliado.csv"
+
+ventana:                      # periodo analizado (ambos extremos incluidos)
+  fecha_min: "2022-10-26"
+  fecha_max: "2022-11-01"
+
+ingesta:
+  descargar: false            # true: descarga y descomprime los días que falten
+  url_base: "https://movilidad-opendata.mitma.es/estudios_basicos/por-municipios/viajes/ficheros-diarios"
+
+spark:
+  master: "local[*]"
+  memoria_driver: "6g"
+  shuffle_partitions: 64
+
+particion:
+  columna: "fecha"            # columna de partición del Parquet curado
+
+# Esquema explícito de los CSV de MITMA (no se infiere)
+esquema: >-
+  fecha DATE, periodo INT, origen STRING, destino STRING, distancia STRING,
+  actividad_origen STRING, actividad_destino STRING,
+  estudio_origen_posible STRING, estudio_destino_posible STRING,
+  residencia STRING, renta STRING, edad STRING, sexo STRING,
+  viajes DOUBLE, viajes_km DOUBLE
+
+limpieza:
+  periodo_min: 0
+  periodo_max: 23
+
+calidad:
+  abortar_si_error: true      # si algún control "error" falla, el pipeline termina con código 1
+  max_pct_descartadas: 1.0    # % máximo de filas que la limpieza puede descartar
+  duplicados:
+    activar: true
+    severidad: "aviso"        # "error" para abortar si hay duplicados
+    fechas: ["2022-11-01"]    # días en los que se busca (la clave completa es cara de calcular)
+    clave: [fecha, periodo, origen, destino, distancia, actividad_origen,
+            actividad_destino, estudio_origen_posible, estudio_destino_posible,
+            residencia, renta, edad, sexo]
+
+analitica:
+  top_destinos: 3             # P2: top N destinos por día
+  umbral_media_q3: 10000      # P3: ignora municipios con media diaria menor
+  top_n_q3: 20
+
+ml:
+  activar: true
+  objetivo: "viajes"                       # variable a predecir (inscripción)
+  features_categoricas: ["destino", "edad"]  # municipio (destino) y franja de edad
+  split: "aleatorio"                       # "aleatorio" (randomSplit, como en clase) | "cronologico"
+  proporcion_train: 0.8                    # solo split aleatorio
+  semilla: 42                              # solo split aleatorio (reproducible)
+  train_hasta: "2022-10-30"                # solo split cronológico: train fecha <= esta, test > esta
+  reg_param: 0.01                          # ridge mínimo: evita matriz singular con one-hot
