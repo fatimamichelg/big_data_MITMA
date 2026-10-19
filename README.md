@@ -30,8 +30,7 @@ Transportes (MITMA).
 git clone https://github.com/fatimamichelg/big_data_MITMA
 cd big_data_MITMA
 docker compose up -d        # levanta el clúster
-chmod +x run_pipeline.sh    # solo la primera vez
-./run_pipeline.sh           # ejecuta todo (apartados A a F + informe)
+bash run_pipeline.sh
 ```
 
 Al terminar se puede abrir el informe (opcional, ya que sus resultados están incluidos en la memoria):
@@ -43,10 +42,9 @@ open informe/informe.html
 ## Otras variantes
 
 ```bash
-./run_pipeline.sh --sin-reto            # todo menos el reto F (más rápido)
-./run_pipeline.sh --etapas C            # un apartado entero (letra A..F)
-./run_pipeline.sh --etapas etl,calidad  # etapas concretas
-./run_pipeline.sh --help
+bash run_pipeline.sh --sin-reto
+bash run_pipeline.sh --etapas C
+bash run_pipeline.sh --etapas etl,calidad
 ```
 ## Archivos del repositorio
 
