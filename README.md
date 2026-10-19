@@ -29,7 +29,7 @@ Transportes (MITMA).
 ```bash
 git clone https://github.com/fatimamichelg/big_data_MITMA
 cd big_data_MITMA
-docker compose up -d        # levanta el clúster
+docker compose up -d       
 bash run_pipeline.sh
 ```
 
