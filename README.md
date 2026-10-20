@@ -8,9 +8,9 @@ Transportes (MITMA).
 
 ```
 .
-├── run_pipeline.sh              # punto de entrada: orquesta todo (A → F + informe)
+├── run_pipeline.sh              # punto de entrada: (A → F + informe)
 ├── config.yaml                  # rutas y parámetros; lo leen run_pipeline.sh y run_pipeline.py
-├── docker-compose.yml           # clúster Hadoop + Spark (perfil "reto" → datanode3)
+├── docker-compose.yml           # clúster Hadoop + Spark 
 ├── Dockerfile.spark             # imagen de Spark / Jupyter (spark-master, spark-worker, mitma-spark)
 ├── Dockerfile.nodemanager       # imagen del NodeManager de YARN
 ├── pipeline/
@@ -55,18 +55,20 @@ bash run_pipeline.sh --etapas etl,calidad
 | Archivo | Descripción |
 |---|---|
 | `README.md` | Presentación del proyecto y cómo ejecutarlo |
-| `run_pipeline.sh` | Punto de entrada. Lanza todas las etapas en orden y orquesta las que usan Docker (fsck, Hadoop Streaming y reto F) |
-| `pipeline/run_pipeline.py` | Todo el código de Spark ordenado por apartados A–F: ingesta, ETL, calidad, formatos, estado de HDFS, MapReduce con RDD, preguntas P1–P3, cache, ML, job del reto F e informe |
+| `run_pipeline.sh` | Punto de entrada. Lanza todas las etapas en orden y orquesta las que usan Docker (fsck, Hadoop Streaming y reto F). Lee sus parámetros de `config.yaml` |
+| `config.yaml` | Configuración única del pipeline: rutas de HDFS, ventana de fechas, parámetros de Spark (master, memoria, cores), análisis, ML, MapReduce y reto F. Lo leen `run_pipeline.sh` y `pipeline/run_pipeline.py`, así que ninguno de los dos lleva rutas escritas |
+| `pipeline/run_pipeline.py` | Todo el código de Spark ordenado por apartados A–F: ingesta, ETL con esquema `StructType`, calidad (controles con acción definida e idempotencia), formatos, estado de HDFS, MapReduce con RDD, preguntas P1–P3 con `explain()`, cache, ML con línea base, job del reto F e informe |
 | `pipeline/download_mitma.py` | Descarga y descomprime los CSV de MITMA (reproduce la obtención de los datos) |
 | `hadoop_streaming/mapper.py` | Fase *map* del job de Hadoop Streaming: emite destino y número de viajes |
 | `hadoop_streaming/reducer.py` | Fase *reduce* (y combiner): suma los viajes por destino |
 | `aux_tables/nombres_municipios_ampliado.csv` | Tabla auxiliar para el join: código de municipio, nombre, provincia y CCAA |
-| `docker-compose.yml` | Define el clúster: NameNode, 2 DataNodes, YARN, HistoryServer, `mitma-spark` y el `datanode3` opcional (perfil `reto`) |
+| `docker-compose.yml` | Define el clúster: NameNode, 2 DataNodes, YARN, HistoryServer, clúster Spark standalone (`spark-master` y `spark-worker`), `mitma-spark` (driver con Jupyter) y el `datanode3` opcional (perfil `reto`) |
 | `hadoop.env` | Configuración de Hadoop que leen los contenedores (replicación, tiempos de latido...) |
-| `Dockerfile.spark` | Imagen del contenedor `mitma-spark` (Jupyter con PySpark) |
+| `Dockerfile.spark` | Imagen compartida por `spark-master`, `spark-worker` y `mitma-spark` (Spark, PySpark, Jupyter y PyYAML) |
 | `Dockerfile.nodemanager` | Imagen del NodeManager con Python 3, necesario para ejecutar `mapper.py` y `reducer.py` en YARN |
-| `.gitignore` | Archivos que no se suben al repositorio (CSV de `data/`, cachés...) |
+| `.gitignore` | Archivos que no se suben al repositorio (CSV de `data/`, copias `*.bak`, cachés...) |
 | `notebooks/1_setup_A.ipynb` | Exploración previa: lectura, limpieza, joins, Parquet, P1–P3 y cache |
 | `notebooks/6_reto_F_tolerancia.ipynb` | Reto F paso a paso |
-| `evidence/` | Evidencias generadas al ejecutar: tiempos, `fsck`, logs de Hadoop Streaming, plan de P2 y carpeta `reto_f/` |
+| `evidence/` | Evidencias generadas al ejecutar: tiempos, `fsck` y listado de HDFS, logs de Hadoop Streaming, planes de ejecución de P1–P3, control de idempotencia y carpeta `reto_f/` |
+| `evidence/capturas/` | Capturas de pantalla: Spark master (worker ALIVE y aplicación completada), Spark UI y HDFS UI |
 | `informe/informe.html` | Informe final con tablas y gráficos |
