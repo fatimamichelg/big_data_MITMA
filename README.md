@@ -8,20 +8,24 @@ Transportes (MITMA).
 
 ```
 .
-├── run_pipeline.sh            # punto de entrada: orquesta todo (A → F + informe)
-├── docker-compose.yml         # clúster Hadoop + Spark (perfil "reto" → datanode3)
-├── Dockerfile.spark / Dockerfile.nodemanager
+├── run_pipeline.sh              # punto de entrada: orquesta todo (A → F + informe)
+├── config.yaml                  # rutas y parámetros; lo leen run_pipeline.sh y run_pipeline.py
+├── docker-compose.yml           # clúster Hadoop + Spark (perfil "reto" → datanode3)
+├── Dockerfile.spark             # imagen de Spark / Jupyter (spark-master, spark-worker, mitma-spark)
+├── Dockerfile.nodemanager       # imagen del NodeManager de YARN
 ├── pipeline/
-│   ├── run_pipeline.py        # TODO el código Spark, ordenado por apartados A–F
-│   └── download_mitma.py      # descarga y descomprime los CSV de MITMA
+│   ├── run_pipeline.py          # todo el código Spark, ordenado por apartados A–F
+│   └── download_mitma.py        # descarga y descomprime los CSV de MITMA
 ├── hadoop_streaming/
-│   ├── mapper.py              # MapReduce con Hadoop Streaming (Python)
-│   └── reducer.py
-├── aux_tables/                # tabla auxiliar de municipios
-├── data/raw/                  # CSV diarios (no se suben a GitHub; los descarga el pipeline)
-├── notebooks/                 # exploración previa (1_setup_A, 6_reto_F_tolerancia)
-├── evidence/                  # evidencias generadas al ejecutar (tiempos, fsck, logs, reto F)
-└── informe/informe.html       # informe generado con tablas y gráficos
+│   ├── mapper.py                # MapReduce con Hadoop Streaming (Python)
+│   └── reducer.py               # también se usa como combiner
+├── aux_tables/                  # tabla auxiliar de municipios
+├── data/raw/                    # CSV diarios (no se suben a GitHub; los descarga el pipeline)
+├── notebooks/                   # exploración previa (1_setup_A, 6_reto_F_tolerancia)
+├── evidence/                    # evidencias generadas al ejecutar (tiempos, fsck, logs, reto F)
+│   └── capturas/                # capturas de pantalla (Spark UI, HDFS UI, master)
+└── informe/
+    └── informe.html             # informe generado con tablas y gráficos
 ```
 
 ## Cómo ejecutar paso a paso
