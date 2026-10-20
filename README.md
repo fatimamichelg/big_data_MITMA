@@ -49,6 +49,10 @@ Espera 1 o 2 minutos hasta que todos los servicios estén en marcha.
 | Windows | Docker Desktop abierto y **Git para Windows** instalado. Desde PowerShell, dentro de la carpeta del repositorio: `& "C:\Program Files\Git\bin\bash.exe" run_pipeline.sh` (probado en Windows). También funciona desde WSL2 con Docker Desktop |
 ```
 
+```bash
+bash run_pipeline.sh
+```
+
 Al terminar se puede abrir el informe (opcional, ya que sus resultados están incluidos en la memoria):
 
 ```bash
