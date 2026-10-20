@@ -30,11 +30,23 @@ Transportes (MITMA).
 
 ## Cómo ejecutar paso a paso
 
+**1. Clonar el repositorio y levantar el clúster**
+
 ```bash
 git clone https://github.com/fatimamichelg/big_data_MITMA
 cd big_data_MITMA
-docker compose up -d       
-bash run_pipeline.sh
+docker compose up -d
+docker compose ps
+```
+
+Espera 1 o 2 minutos hasta que todos los servicios estén en marcha.
+
+**2. Lanzar el pipeline** (unos 35–40 minutos)
+
+| Sistema | Qué usar |
+|---|---|
+| macOS / Linux | La terminal normal: `bash run_pipeline.sh` |
+| Windows | Docker Desktop abierto y **Git para Windows** instalado. Desde PowerShell, dentro de la carpeta del repositorio: `& "C:\Program Files\Git\bin\bash.exe" run_pipeline.sh` (probado en Windows). También funciona desde WSL2 con Docker Desktop |
 ```
 
 Al terminar se puede abrir el informe (opcional, ya que sus resultados están incluidos en la memoria):
