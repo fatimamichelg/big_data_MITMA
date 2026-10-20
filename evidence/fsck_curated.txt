@@ -1,4 +1,40 @@
-FSCK started by root (auth:SIMPLE) from /172.18.0.7 for path /curated/viajes at Sat Oct 17 19:26:39 UTC 2026
+Connecting to namenode via http://namenode:9870/fsck?ugi=root&files=1&blocks=1&locations=1&path=%2Fcurated%2Fviajes
+FSCK started by root (auth:SIMPLE) from /172.18.0.5 for path /curated/viajes at Mon Oct 19 22:21:52 UTC 2026
+/curated/viajes <dir>
+/curated/viajes/fecha=2022-10-26 <dir>
+/curated/viajes/fecha=2022-10-26/part-00004-0aafade1-c686-4235-a230-a5571d756392.c000.snappy.parquet 142155952 bytes, replicated: replication=2, 2 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073743306_2482 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK]]
+1. BP-1940130292-172.18.0.3-1792136015989:blk_1073743308_2484 len=7938224 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+
+/curated/viajes/fecha=2022-10-27 <dir>
+/curated/viajes/fecha=2022-10-27/part-00006-0aafade1-c686-4235-a230-a5571d756392.c000.snappy.parquet 144819756 bytes, replicated: replication=2, 2 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073743310_2486 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+1. BP-1940130292-172.18.0.3-1792136015989:blk_1073743311_2487 len=10602028 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK]]
+
+/curated/viajes/fecha=2022-10-28 <dir>
+/curated/viajes/fecha=2022-10-28/part-00000-0aafade1-c686-4235-a230-a5571d756392.c000.snappy.parquet 149978619 bytes, replicated: replication=2, 2 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073743303_2479 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK]]
+1. BP-1940130292-172.18.0.3-1792136015989:blk_1073743305_2481 len=15760891 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK]]
+
+/curated/viajes/fecha=2022-10-29 <dir>
+/curated/viajes/fecha=2022-10-29/part-00005-0aafade1-c686-4235-a230-a5571d756392.c000.snappy.parquet 138150740 bytes, replicated: replication=2, 2 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073743307_2483 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK]]
+1. BP-1940130292-172.18.0.3-1792136015989:blk_1073743309_2485 len=3933012 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+
+/curated/viajes/fecha=2022-10-30 <dir>
+/curated/viajes/fecha=2022-10-30/part-00001-0aafade1-c686-4235-a230-a5571d756392.c000.snappy.parquet 138644782 bytes, replicated: replication=2, 2 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073743300_2476 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+1. BP-1940130292-172.18.0.3-1792136015989:blk_1073743301_2477 len=4427054 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK]]
+
+/curated/viajes/fecha=2022-10-31 <dir>
+/curated/viajes/fecha=2022-10-31/part-00002-0aafade1-c686-4235-a230-a5571d756392.c000.snappy.parquet 140454015 bytes, replicated: replication=2, 2 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073743302_2478 len=134217728 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK]]
+1. BP-1940130292-172.18.0.3-1792136015989:blk_1073743304_2480 len=6236287 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+
+/curated/viajes/fecha=2022-11-01 <dir>
+/curated/viajes/fecha=2022-11-01/part-00003-0aafade1-c686-4235-a230-a5571d756392.c000.snappy.parquet 121976651 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-1940130292-172.18.0.3-1792136015989:blk_1073743299_2475 len=121976651 Live_repl=2  [DatanodeInfoWithStorage[172.18.0.6:9866,DS-8e9e0758-da8b-440d-9848-458810ab5ed1,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-71409401-11dd-443a-8c7d-bf3e97955b1a,DISK]]
+
 
 Status: HEALTHY
  Number of data-nodes:	2
@@ -7,10 +43,10 @@ Status: HEALTHY
  Total symlinks:		0
 
 Replicated Blocks:
- Total size:	879772105 B
- Total files:	54
- Total blocks (validated):	54 (avg. block size 16292076 B)
- Minimally replicated blocks:	54 (100.0 %)
+ Total size:	976180515 B
+ Total files:	7
+ Total blocks (validated):	13 (avg. block size 75090808 B)
+ Minimally replicated blocks:	13 (100.0 %)
  Over-replicated blocks:	0 (0.0 %)
  Under-replicated blocks:	0 (0.0 %)
  Mis-replicated blocks:		0 (0.0 %)
@@ -32,7 +68,7 @@ Erasure Coded Block Groups:
  Missing block groups:		0
  Corrupt block groups:		0
  Missing internal blocks:	0
-FSCK ended at Sat Oct 17 19:26:39 UTC 2026 in 29 milliseconds
+FSCK ended at Mon Oct 19 22:21:52 UTC 2026 in 9 milliseconds
 
 
 The filesystem under path '/curated/viajes' is HEALTHY

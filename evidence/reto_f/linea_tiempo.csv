@@ -1,0 +1,9 @@
+hora,evento
+00:38:06,estado inicial: 3 DataNodes vivos, 0 bloques under-replicated
+00:38:12,job de Spark en marcha
+00:38:34,docker stop datanode2 (tras la iteración 3)
+00:38:52,NameNode da el nodo por muerto a los 13 s: 2 DataNodes vivos, 13 bloques under-replicated
+00:40:02,el job de Spark termina (código 0; 0 = resultado idéntico)
+00:44:20,re-replicación terminada a los 344 s del stop: 0 bloques under-replicated
+00:44:34,datanode2 vuelve: 3 DataNodes vivos
+00:49:07,estado final: 2 DataNodes vivos, 0 under-replicated

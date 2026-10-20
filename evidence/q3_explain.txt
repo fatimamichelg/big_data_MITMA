@@ -1,0 +1,86 @@
+== Physical Plan ==
+AdaptiveSparkPlan (15)
++- TakeOrderedAndProject (14)
+   +- Project (13)
+      +- Project (12)
+         +- Filter (11)
+            +- Window (10)
+               +- Sort (9)
+                  +- Exchange (8)
+                     +- HashAggregate (7)
+                        +- Exchange (6)
+                           +- HashAggregate (5)
+                              +- Project (4)
+                                 +- Filter (3)
+                                    +- Project (2)
+                                       +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [4]: [destino#53, viajes#65, nombre_destino#70, fecha#75]
+Batched: true
+Location: InMemoryFileIndex [hdfs://namenode:9000/curated/viajes]
+ReadSchema: struct<destino:string,viajes:double,nombre_destino:string>
+
+(2) Project
+Output [5]: [destino#53, viajes#65, nombre_destino#70, fecha#75, (RLIKE(destino#53, ^(PT|FR)) OR (destino#53 = externo)) AS destino_extranjero#79]
+Input [4]: [destino#53, viajes#65, nombre_destino#70, fecha#75]
+
+(3) Filter
+Input [5]: [destino#53, viajes#65, nombre_destino#70, fecha#75, destino_extranjero#79]
+Condition : (isnotnull(destino_extranjero#79) AND NOT destino_extranjero#79)
+
+(4) Project
+Output [4]: [destino#53, viajes#65, coalesce(nombre_destino#70, ZONA EXTRANJERA) AS nombre_destino#81, fecha#75]
+Input [5]: [destino#53, viajes#65, nombre_destino#70, fecha#75, destino_extranjero#79]
+
+(5) HashAggregate
+Input [4]: [destino#53, viajes#65, nombre_destino#81, fecha#75]
+Keys [3]: [fecha#75, destino#53, nombre_destino#81]
+Functions [1]: [partial_sum(viajes#65)]
+Aggregate Attributes [1]: [sum#206]
+Results [4]: [fecha#75, destino#53, nombre_destino#81, sum#207]
+
+(6) Exchange
+Input [4]: [fecha#75, destino#53, nombre_destino#81, sum#207]
+Arguments: hashpartitioning(fecha#75, destino#53, nombre_destino#81, 64), ENSURE_REQUIREMENTS, [plan_id=1790]
+
+(7) HashAggregate
+Input [4]: [fecha#75, destino#53, nombre_destino#81, sum#207]
+Keys [3]: [fecha#75, destino#53, nombre_destino#81]
+Functions [1]: [sum(viajes#65)]
+Aggregate Attributes [1]: [sum(viajes#65)#195]
+Results [4]: [fecha#75, destino#53, nombre_destino#81, sum(viajes#65)#195 AS viajes#169]
+
+(8) Exchange
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: hashpartitioning(destino#53, 64), ENSURE_REQUIREMENTS, [plan_id=1793]
+
+(9) Sort
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: [destino#53 ASC NULLS FIRST], false, 0
+
+(10) Window
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: [avg(viajes#169) windowspecdefinition(destino#53, specifiedwindowframe(RowFrame, unboundedpreceding$(), unboundedfollowing$())) AS media_muni#316], [destino#53]
+
+(11) Filter
+Input [5]: [fecha#75, destino#53, nombre_destino#81, viajes#169, media_muni#316]
+Condition : (isnotnull(media_muni#316) AND (media_muni#316 >= 10000.0))
+
+(12) Project
+Output [6]: [fecha#75, destino#53, nombre_destino#81, viajes#169, media_muni#316, (viajes#169 - media_muni#316) AS desviacion#318]
+Input [5]: [fecha#75, destino#53, nombre_destino#81, viajes#169, media_muni#316]
+
+(13) Project
+Output [7]: [fecha#75, destino#53, nombre_destino#81, viajes#169, media_muni#316, desviacion#318, round(((desviacion#318 * 100.0) / media_muni#316), 1) AS desv_pct#319]
+Input [6]: [fecha#75, destino#53, nombre_destino#81, viajes#169, media_muni#316, desviacion#318]
+
+(14) TakeOrderedAndProject
+Input [7]: [fecha#75, destino#53, nombre_destino#81, viajes#169, media_muni#316, desviacion#318, desv_pct#319]
+Arguments: 20, [abs(desv_pct#319) DESC NULLS LAST], [fecha#75, destino#53, nombre_destino#81, cast(round(viajes#169, 0) as bigint) AS viajes#327L, cast(round(media_muni#316, 0) as bigint) AS media_muni#328L, cast(round(desviacion#318, 0) as bigint) AS desviacion#329L, desv_pct#319]
+
+(15) AdaptiveSparkPlan
+Output [7]: [fecha#75, destino#53, nombre_destino#81, viajes#327L, media_muni#328L, desviacion#329L, desv_pct#319]
+Arguments: isFinalPlan=false
+

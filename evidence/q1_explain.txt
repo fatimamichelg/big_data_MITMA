@@ -1,0 +1,76 @@
+== Physical Plan ==
+AdaptiveSparkPlan (13)
++- Project (12)
+   +- Sort (11)
+      +- Exchange (10)
+         +- Project (9)
+            +- HashAggregate (8)
+               +- Exchange (7)
+                  +- HashAggregate (6)
+                     +- Project (5)
+                        +- Filter (4)
+                           +- Project (3)
+                              +- Filter (2)
+                                 +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [6]: [destino#53, origen#54, viajes#65, ccaa_origen#69, ccaa_destino#72, fecha#75]
+Batched: true
+Location: InMemoryFileIndex [hdfs://namenode:9000/curated/viajes]
+ReadSchema: struct<destino:string,origen:string,viajes:double,ccaa_origen:string,ccaa_destino:string>
+
+(2) Filter
+Input [6]: [destino#53, origen#54, viajes#65, ccaa_origen#69, ccaa_destino#72, fecha#75]
+Condition : NOT (coalesce(ccaa_origen#69, Extranjero) = coalesce(ccaa_destino#72, Extranjero))
+
+(3) Project
+Output [5]: [viajes#65, coalesce(ccaa_origen#69, Extranjero) AS ccaa_origen#86, coalesce(ccaa_destino#72, Extranjero) AS ccaa_destino#87, (RLIKE(origen#54, ^(PT|FR)) OR (origen#54 = externo)) AS origen_extranjero#78, (RLIKE(destino#53, ^(PT|FR)) OR (destino#53 = externo)) AS destino_extranjero#79]
+Input [6]: [destino#53, origen#54, viajes#65, ccaa_origen#69, ccaa_destino#72, fecha#75]
+
+(4) Filter
+Input [5]: [viajes#65, ccaa_origen#86, ccaa_destino#87, origen_extranjero#78, destino_extranjero#79]
+Condition : ((isnotnull(origen_extranjero#78) AND isnotnull(destino_extranjero#79)) AND (NOT origen_extranjero#78 AND NOT destino_extranjero#79))
+
+(5) Project
+Output [3]: [viajes#65, ccaa_origen#86, ccaa_destino#87]
+Input [5]: [viajes#65, ccaa_origen#86, ccaa_destino#87, origen_extranjero#78, destino_extranjero#79]
+
+(6) HashAggregate
+Input [3]: [viajes#65, ccaa_origen#86, ccaa_destino#87]
+Keys [2]: [ccaa_origen#86, ccaa_destino#87]
+Functions [1]: [partial_sum(viajes#65)]
+Aggregate Attributes [1]: [sum#148]
+Results [3]: [ccaa_origen#86, ccaa_destino#87, sum#149]
+
+(7) Exchange
+Input [3]: [ccaa_origen#86, ccaa_destino#87, sum#149]
+Arguments: hashpartitioning(ccaa_origen#86, ccaa_destino#87, 64), ENSURE_REQUIREMENTS, [plan_id=506]
+
+(8) HashAggregate
+Input [3]: [ccaa_origen#86, ccaa_destino#87, sum#149]
+Keys [2]: [ccaa_origen#86, ccaa_destino#87]
+Functions [1]: [sum(viajes#65)]
+Aggregate Attributes [1]: [sum(viajes#65)#145]
+Results [3]: [ccaa_origen#86, ccaa_destino#87, sum(viajes#65)#145 AS viajes#119]
+
+(9) Project
+Output [4]: [ccaa_origen#86, ccaa_destino#87, viajes#119, round(((viajes#119 * 100.0) / 1.6653322774355909E7), 2) AS pct_interccaa#146]
+Input [3]: [ccaa_origen#86, ccaa_destino#87, viajes#119]
+
+(10) Exchange
+Input [4]: [ccaa_origen#86, ccaa_destino#87, viajes#119, pct_interccaa#146]
+Arguments: rangepartitioning(viajes#119 DESC NULLS LAST, 64), ENSURE_REQUIREMENTS, [plan_id=510]
+
+(11) Sort
+Input [4]: [ccaa_origen#86, ccaa_destino#87, viajes#119, pct_interccaa#146]
+Arguments: [viajes#119 DESC NULLS LAST], true, 0
+
+(12) Project
+Output [4]: [ccaa_origen#86, ccaa_destino#87, cast(round(viajes#119, 0) as bigint) AS viajes#147L, pct_interccaa#146]
+Input [4]: [ccaa_origen#86, ccaa_destino#87, viajes#119, pct_interccaa#146]
+
+(13) AdaptiveSparkPlan
+Output [4]: [ccaa_origen#86, ccaa_destino#87, viajes#147L, pct_interccaa#146]
+Arguments: isFinalPlan=false
+

@@ -1,0 +1,59 @@
+# ==========================================================================
+# Configuración del pipeline MITMA (la leen pipeline/run_pipeline.py y run_pipeline.sh).
+# Rutas y parámetros se cambian AQUÍ; el código no lleva rutas escritas.
+# Las claves (nombres a la izquierda de los dos puntos) no se repiten en ninguna sección,
+# porque run_pipeline.sh las busca por nombre.
+# ==========================================================================
+
+hdfs:
+  uri: hdfs://namenode:9000
+  raw: /raw/viajes                    # zona raw: CSV originales, sin tocar
+  zonificacion: /raw/zonificacion     # tabla auxiliar de municipios (para el join)
+  curated: /curated/viajes            # zona curada: Parquet particionado por la columna de partición
+  results: /results                   # resultados pequeños en CSV
+  replicacion: 2                      # factor de replicación de lo que escribe Spark
+
+datos:
+  fecha_min: "2022-10-26"             # ventana de 7 días
+  fecha_max: "2022-11-01"
+  dir_local: data/raw                 # CSV diarios en el ordenador (no van a GitHub)
+  tabla_auxiliar: aux_tables/nombres_municipios_ampliado.csv
+  patron_fichero: "{fecha}_Viajes_municipios.csv"      # {fecha} = AAAAMMDD
+  descargar: true                     # true: descarga los días que falten (si ya están, no hace nada)
+  url_base: https://movilidad-opendata.mitma.es/estudios_basicos/por-municipios/viajes/ficheros-diarios
+  columna_particion: fecha            # el Parquet curado se particiona por esta columna
+
+spark:
+  master: "spark://spark-master:7077"   # clúster Spark del docker-compose (spark-master + spark-worker)
+  #                                     # para ejecutar sin clúster: master: "local[*]"
+  driver_host: mitma-spark              # nombre del contenedor del driver (el worker se conecta a él)
+  memoria_driver: 2g
+  memoria_executor: 4g                  # tiene que caber en la memoria del worker (compose: --memory 4g)
+  cores_executor: 4                     # = cores del worker (compose: --cores 4)
+  shuffle_partitions: 64
+  ui_pausa_segundos: 0                  # >0: al terminar, deja la Spark UI abierta esos segundos (para capturas)
+
+analisis:
+  top_destinos: 3                     # P2: top N destinos por día
+  umbral_q3: 10000                    # P3: ignora municipios con media diaria menor
+  top_n_q3: 20
+
+ml:
+  activar: true
+  objetivo: viajes
+  features_categoricas: [destino, edad]       # municipio (destino) y franja de edad
+  split: aleatorio                    # aleatorio (randomSplit, como en clase) | cronologico
+  proporcion_train: 0.8
+  semilla: 42
+  train_hasta: "2022-10-30"           # solo si el split es cronológico
+  reg_param: 0.01
+
+mapreduce:
+  salida_streaming: mr_streaming_destino_7d   # carpeta de salida del job de Hadoop Streaming (dentro de results)
+
+reto_f:
+  iteraciones: 20                     # iteraciones del job de Spark
+  iteracion_parada: 3                 # se para el DataNode cuando acaba esta iteración
+  datanode_a_parar: datanode2
+  datanode_extra: datanode3           # tercer nodo (perfil "reto" de docker-compose.yml)
+  fsck_fichero: /raw/viajes/20221101_Viajes_municipios.csv    # fichero del que se enseña hdfs fsck

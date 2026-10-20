@@ -1,0 +1,101 @@
+== Physical Plan ==
+AdaptiveSparkPlan (18)
++- Project (17)
+   +- Sort (16)
+      +- Exchange (15)
+         +- Filter (14)
+            +- Window (13)
+               +- WindowGroupLimit (12)
+                  +- Sort (11)
+                     +- Exchange (10)
+                        +- WindowGroupLimit (9)
+                           +- Sort (8)
+                              +- HashAggregate (7)
+                                 +- Exchange (6)
+                                    +- HashAggregate (5)
+                                       +- Project (4)
+                                          +- Filter (3)
+                                             +- Project (2)
+                                                +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [4]: [destino#53, viajes#65, nombre_destino#70, fecha#75]
+Batched: true
+Location: InMemoryFileIndex [hdfs://namenode:9000/curated/viajes]
+ReadSchema: struct<destino:string,viajes:double,nombre_destino:string>
+
+(2) Project
+Output [5]: [destino#53, viajes#65, nombre_destino#70, fecha#75, (RLIKE(destino#53, ^(PT|FR)) OR (destino#53 = externo)) AS destino_extranjero#79]
+Input [4]: [destino#53, viajes#65, nombre_destino#70, fecha#75]
+
+(3) Filter
+Input [5]: [destino#53, viajes#65, nombre_destino#70, fecha#75, destino_extranjero#79]
+Condition : (isnotnull(destino_extranjero#79) AND NOT destino_extranjero#79)
+
+(4) Project
+Output [4]: [destino#53, viajes#65, coalesce(nombre_destino#70, ZONA EXTRANJERA) AS nombre_destino#81, fecha#75]
+Input [5]: [destino#53, viajes#65, nombre_destino#70, fecha#75, destino_extranjero#79]
+
+(5) HashAggregate
+Input [4]: [destino#53, viajes#65, nombre_destino#81, fecha#75]
+Keys [3]: [fecha#75, destino#53, nombre_destino#81]
+Functions [1]: [partial_sum(viajes#65)]
+Aggregate Attributes [1]: [sum#206]
+Results [4]: [fecha#75, destino#53, nombre_destino#81, sum#207]
+
+(6) Exchange
+Input [4]: [fecha#75, destino#53, nombre_destino#81, sum#207]
+Arguments: hashpartitioning(fecha#75, destino#53, nombre_destino#81, 64), ENSURE_REQUIREMENTS, [plan_id=1098]
+
+(7) HashAggregate
+Input [4]: [fecha#75, destino#53, nombre_destino#81, sum#207]
+Keys [3]: [fecha#75, destino#53, nombre_destino#81]
+Functions [1]: [sum(viajes#65)]
+Aggregate Attributes [1]: [sum(viajes#65)#195]
+Results [4]: [fecha#75, destino#53, nombre_destino#81, sum(viajes#65)#195 AS viajes#169]
+
+(8) Sort
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: [fecha#75 ASC NULLS FIRST, viajes#169 DESC NULLS LAST], false, 0
+
+(9) WindowGroupLimit
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: [fecha#75], [viajes#169 DESC NULLS LAST], rank(viajes#169), 3, Partial
+
+(10) Exchange
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: hashpartitioning(fecha#75, 64), ENSURE_REQUIREMENTS, [plan_id=1104]
+
+(11) Sort
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: [fecha#75 ASC NULLS FIRST, viajes#169 DESC NULLS LAST], false, 0
+
+(12) WindowGroupLimit
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: [fecha#75], [viajes#169 DESC NULLS LAST], rank(viajes#169), 3, Final
+
+(13) Window
+Input [4]: [fecha#75, destino#53, nombre_destino#81, viajes#169]
+Arguments: [rank(viajes#169) windowspecdefinition(fecha#75, viajes#169 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS puesto#196], [fecha#75], [viajes#169 DESC NULLS LAST]
+
+(14) Filter
+Input [5]: [fecha#75, destino#53, nombre_destino#81, viajes#169, puesto#196]
+Condition : (puesto#196 <= 3)
+
+(15) Exchange
+Input [5]: [fecha#75, destino#53, nombre_destino#81, viajes#169, puesto#196]
+Arguments: rangepartitioning(fecha#75 ASC NULLS FIRST, puesto#196 ASC NULLS FIRST, 64), ENSURE_REQUIREMENTS, [plan_id=1110]
+
+(16) Sort
+Input [5]: [fecha#75, destino#53, nombre_destino#81, viajes#169, puesto#196]
+Arguments: [fecha#75 ASC NULLS FIRST, puesto#196 ASC NULLS FIRST], true, 0
+
+(17) Project
+Output [5]: [fecha#75, destino#53, nombre_destino#81, cast(round(viajes#169, 0) as bigint) AS viajes#205L, puesto#196]
+Input [5]: [fecha#75, destino#53, nombre_destino#81, viajes#169, puesto#196]
+
+(18) AdaptiveSparkPlan
+Output [5]: [fecha#75, destino#53, nombre_destino#81, viajes#205L, puesto#196]
+Arguments: isFinalPlan=false
+

@@ -97,6 +97,48 @@ services:
     env_file:
       - ./hadoop.env
 
+  # --- Clúster Spark (standalone): 1 master + 1 worker. Misma imagen que mitma-spark, así que
+  #     driver y worker tienen las mismas versiones de Spark y Python.
+  spark-master:
+    build:
+      context: .
+      dockerfile: Dockerfile.spark
+    container_name: spark-master
+    user: root
+    command: bash -c "exec $$SPARK_HOME/bin/spark-class org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080"
+    ports:
+      - "8080:8080"          # UI del master: http://localhost:8080
+    environment:
+      - HADOOP_USER_NAME=root
+    healthcheck:             # la imagen trae un healthcheck de Jupyter que aquí no aplica
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 15s
+
+  spark-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.spark
+    container_name: spark-worker
+    user: root
+    depends_on:
+      - spark-master
+    command: bash -c "exec $$SPARK_HOME/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077 --cores 4 --memory 4g --webui-port 8081"
+    ports:
+      - "8081:8081"          # UI del worker: http://localhost:8081
+    environment:
+      - HADOOP_USER_NAME=root
+      - SPARK_WORKER_DIR=/tmp/spark-worker
+    healthcheck:             # la imagen trae un healthcheck de Jupyter que aquí no aplica
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8081', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 15s
+
+  # --- Entorno de desarrollo PySpark (Jupyter): el driver se conecta al master de arriba
   spark:
     build:
       context: .
@@ -105,6 +147,7 @@ services:
     user: root
     depends_on:
       - namenode
+      - spark-master
     ports:
       - "8888:8888"
       - "4040:4040"

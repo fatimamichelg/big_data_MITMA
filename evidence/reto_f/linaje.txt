@@ -1,0 +1,33 @@
+=== Plan (explain) ===
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[destino#0], functions=[sum(viajes#12)])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(destino#0, 64), ENSURE_REQUIREMENTS, [plan_id=37]
+               +- *(1) HashAggregate(keys=[destino#0], functions=[partial_sum(viajes#12)])
+                  +- *(1) Project [destino#0, viajes#12]
+                     +- *(1) Filter ((isnotnull(destino#0) AND NOT RLIKE(destino#0, ^(PT|FR))) AND NOT (destino#0 = externo))
+                        +- *(1) ColumnarToRow
+                           +- FileScan parquet [destino#0,viajes#12,fecha#22] Batched: true, DataFilters: [isnotnull(destino#0), NOT RLIKE(destino#0, ^(PT|FR)), NOT (destino#0 = externo)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://namenode:9000/curated/viajes], PartitionFilters: [], PushedFilters: [IsNotNull(destino), Not(EqualTo(destino,externo))], ReadSchema: struct<destino:string,viajes:double>
++- == Initial Plan ==
+   HashAggregate(keys=[destino#0], functions=[sum(viajes#12)])
+   +- Exchange hashpartitioning(destino#0, 64), ENSURE_REQUIREMENTS, [plan_id=15]
+      +- HashAggregate(keys=[destino#0], functions=[partial_sum(viajes#12)])
+         +- Project [destino#0, viajes#12]
+            +- Filter ((isnotnull(destino#0) AND NOT RLIKE(destino#0, ^(PT|FR))) AND NOT (destino#0 = externo))
+               +- FileScan parquet [destino#0,viajes#12,fecha#22] Batched: true, DataFilters: [isnotnull(destino#0), NOT RLIKE(destino#0, ^(PT|FR)), NOT (destino#0 = externo)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://namenode:9000/curated/viajes], PartitionFilters: [], PushedFilters: [IsNotNull(destino), Not(EqualTo(destino,externo))], ReadSchema: struct<destino:string,viajes:double>
+
+
+=== Linaje del RDD (toDebugString) ===
+(1) MapPartitionsRDD[10] at javaToPython at DirectMethodHandleAccessor.java:103 []
+ |  MapPartitionsRDD[9] at javaToPython at DirectMethodHandleAccessor.java:103 []
+ |  SQLExecutionRDD[8] at javaToPython at DirectMethodHandleAccessor.java:103 []
+ |  MapPartitionsRDD[7] at $anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 []
+ |  ShuffledRowRDD[6] at $anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 []
+ +-(8) MapPartitionsRDD[5] at $anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 []
+    |  MapPartitionsRDD[4] at $anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 []
+    |  MapPartitionsRDD[3] at $anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 []
+    |  FileScanRDD[2] at $anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 []

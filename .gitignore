@@ -5,3 +5,5 @@ __pycache__/
 .DS_Store
 .env
 *.bak
+*.bak*
+pipeline/run_pipeline_OG.py
