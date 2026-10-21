@@ -1,5 +1,4 @@
 # Movilidad en España con Big Data (MITMA) — Proyecto Big Data & Cloud Computing
-Fatima, Telmo y Aimar
 
 Pipeline de datos sobre los viajes diarios entre municipios publicados por el Ministerio de
 Transportes (MITMA). 
